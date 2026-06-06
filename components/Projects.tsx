@@ -59,7 +59,7 @@ function FeaturedCard({
       initial={reduce ? false : { opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
       className="lg:col-span-2 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/40 dark:to-blue-900/20 border border-blue-100 dark:border-blue-900/40 p-8 md:p-10 flex flex-col gap-6 group"
     >
       <div className="flex items-start justify-between gap-4">
@@ -109,7 +109,7 @@ function SmallCard({
       initial={reduce ? false : { opacity: 0, y: 32 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
-      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
+      transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
       className="rounded-2xl bg-zinc-100/80 dark:bg-zinc-800/40 border border-zinc-200 dark:border-zinc-700/50 p-7 flex flex-col gap-5 group flex-1"
     >
       <div className="flex items-start justify-between gap-4">
