@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>林汶 Meg Lin｜AI Workflow & E-commerce Operations</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--alt:#f5f5f7;--ink:#1d1d1f;--mute:#6e6e73;--line:#d2d2d7;--blue:#0071e3;--navbg:rgba(255,255,255,.8);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#000;--alt:#161617;--ink:#f5f5f7;--mute:#a1a1a6;--line:#424245;--blue:#2997ff;--navbg:rgba(0,0,0,.8);color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#000;--alt:#161617;--ink:#f5f5f7;--mute:#a1a1a6;--line:#424245;--blue:#2997ff;--navbg:rgba(0,0,0,.8);color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(56px + env(safe-area-inset-top,0px))}
+html[lang="zh-Hant"] .e{display:none}
+html[lang="en"] .z{display:none}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro TC","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--navbg);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);z-index:10}
+a{color:var(--blue);text-decoration:none}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:4px}
+.w{max-width:980px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;height:48px;background:var(--navbg);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+nav .w{height:100%;display:flex;align-items:center;justify-content:space-between}
+nav b{font-weight:500;font-size:.95rem}
+nav div{display:flex;gap:20px;font-size:.82rem;align-items:center}
+nav a,nav button{color:var(--ink);opacity:.8}nav a:hover,nav button:hover{opacity:1}
+nav button{all:unset;cursor:pointer;font-size:.82rem;border:1px solid var(--line);border-radius:980px;padding:2px 10px;color:var(--ink)}
+nav button:focus-visible{outline:2px solid var(--blue)}
+@media(max-width:620px){nav div{gap:12px}nav b,nav .opt{display:none}}
+.hero{text-align:center;padding:110px 0 100px}
+.hero h1{margin:0;font-size:clamp(3.2rem,12vw,6.6rem);line-height:1.04;font-weight:700;letter-spacing:-.03em}
+.hero .role{font-size:clamp(1.1rem,3.4vw,1.6rem);font-weight:500;color:var(--mute);margin:12px 0 0}
+.hero .lead{font-size:clamp(1.15rem,3vw,1.5rem);line-height:1.5;margin:32px auto 0;max-width:28em;font-weight:500}
+.links{display:flex;gap:26px;justify-content:center;align-items:center;margin-top:34px;flex-wrap:wrap}
+.btn{all:unset;display:inline-block;cursor:pointer;background:var(--blue);color:#fff;border-radius:980px;padding:11px 24px;font-size:1rem}
+.btn:hover{filter:brightness(1.08)}.btn:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.tx{all:unset;cursor:pointer;color:var(--blue)}.tx:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+section{padding:92px 0}section.alt{background:var(--alt)}
+h2{font-size:clamp(2rem,5.5vw,3.1rem);line-height:1.12;letter-spacing:-.02em;margin:0 0 14px;font-weight:700}
+.sub{color:var(--mute);font-size:1.12rem;margin:0 0 52px;max-width:34em}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+@media(max-width:760px){.cols{grid-template-columns:1fr;gap:34px}}
+.stat .n{font-size:clamp(2.6rem,7vw,3.8rem);font-weight:700;line-height:1.05;letter-spacing:-.03em}
+.stat h3{font-size:1.08rem;margin:14px 0 6px}.stat p{margin:0;color:var(--mute);font-size:.97rem}
+.cols h3{font-size:1.08rem;margin:0 0 10px}
+.cols ul{margin:0;padding:0;list-style:none}
+.cols li{padding:9px 0;border-top:1px solid var(--line);font-size:.98rem}
+.cols li small{display:block;color:var(--mute);font-size:.86rem}
+.cols p{margin:0;font-size:1rem}
+.flow{display:flex;gap:14px;margin:0 0 48px;padding:0;list-style:none}
+.flow li{flex:1;position:relative;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:16px;font-size:.93rem;line-height:1.5}
+.flow li:not(:last-child)::after{content:"›";position:absolute;right:-12px;top:50%;transform:translateY(-52%);color:var(--mute);font-size:1.5rem;line-height:1}
+.flow b{display:block;margin-bottom:2px}
+@media(max-width:760px){.flow{flex-direction:column}.flow li:not(:last-child)::after{right:50%;top:auto;bottom:-20px;transform:rotate(90deg) translateX(8px)}}
+.tag{display:inline-block;font-size:.85rem;color:var(--mute);margin-bottom:8px}
+.rows{border-top:1px solid var(--line)}.row{border-bottom:1px solid var(--line)}
+.row>button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:150px 1fr 24px;gap:16px;align-items:center;width:100%;padding:22px 0}
+.row>button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media(max-width:640px){.row>button{grid-template-columns:1fr 24px}.row .d{grid-column:1/2;order:-1}}
+.row .d{color:var(--mute);font-size:.92rem}
+.row .t{font-weight:700;font-size:1.08rem;line-height:1.4}
+.row .c{display:block;color:var(--mute);font-weight:400;font-size:.94rem}
+.row .x{position:relative;width:16px;height:16px;justify-self:end}
+.row .x::before,.row .x::after{content:"";position:absolute;background:var(--mute);left:0;top:7px;width:16px;height:2px;transition:transform .3s}
+.row .x::after{transform:rotate(90deg)}.row.open .x::after{transform:rotate(0)}
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s ease}
+.row.open .panel{grid-template-rows:1fr}.panel>div{overflow:hidden}
+.panel ul{margin:0;padding:0 0 24px 166px}.panel li{margin:6px 0;max-width:46em}
+@media(max-width:640px){.panel ul{padding-left:18px}}
+details{margin-top:26px}summary{cursor:pointer;color:var(--blue)}
+details ul{list-style:none;padding:0;margin:14px 0 0}details li{padding:10px 0;border-top:1px solid var(--line);font-size:.97rem}
+details li small{color:var(--mute);margin-left:8px}
+.contact{text-align:center}.contact p{color:var(--mute);margin:0 auto 26px;max-width:32em}
+.contact .links{margin-top:0}
+footer{padding:26px 0 40px;text-align:center;color:var(--mute);font-size:.82rem;border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<nav><div class="w"><b>林汶 Meg Lin</b><div>
+<a class="opt" href="#highlights"><span class="z">成果</span><span class="e">Results</span></a>
+<a href="#case"><span class="z">案例</span><span class="e">Case study</span></a>
+<a href="#experience"><span class="z">經歷</span><span class="e">Experience</span></a>
+<a class="opt" href="#skills"><span class="z">專長</span><span class="e">Skills</span></a>
+<button type="button" id="lg" aria-label="Language"><span class="z">EN</span><span class="e">中文</span></button>
+</div></div></nav>
+
+<header class="hero"><div class="w">
+<h1>林汶 <span class="e" style="font-size:.5em;display:block;margin-top:.1em">Meg Lin</span></h1>
+<p class="role"><span class="z">品牌電商營運｜AI 流程優化</span><span class="e">E-commerce Operations · AI Workflow Automation</span></p>
+<p class="lead"><span class="z">我用 n8n 與 AI 工具，為電商建立自動化的出貨與客服流程。</span><span class="e">I build automated fulfillment and customer-service workflows for e-commerce with n8n and AI tools.</span></p>
+<div class="links"><a class="btn" data-mail href="#contact" target="_blank" rel="noopener"><span class="z">聯絡我</span><span class="e">Get in touch</span></a><a href="#case"><span class="z">看我的案例</span><span class="e">See a case study</span></a></div>
+</div></header>
+
+<section class="alt" id="highlights"><div class="w">
+<h2><span class="z">成果</span><span class="e">Results</span></h2>
+<p class="sub"><span class="z">在混亂的環境裡找到可以改善的地方，然後實際改善它。</span><span class="e">Find what can be improved in a messy environment, then actually improve it.</span></p>
+<div class="cols">
+<div class="stat"><div class="n">4.19% → 3.49%</div><h3><span class="z">超商未取貨率</span><span class="e">Convenience-store no-pickup rate</span></h3><p><span class="z">上線自動提醒系統後，未取貨率由 4.19%（80／1,910）降至 3.49%（47／1,345），相對降幅 16.6%。</span><span class="e">After launching the automated reminder system, the rate fell from 4.19% (80 of 1,910) to 3.49% (47 of 1,345), a 16.6% relative reduction.</span></p></div>
+<div class="stat"><div class="n">84,000</div><h3><span class="z">Web3 社群人數</span><span class="e">Web3 community members</span></h3><p><span class="z">約一年半成長至 84,000 人。擔任管理員，負責活絡社團氛圍並與成員互動。</span><span class="e">Grew to 84,000 in about 1.5 years. As community admin, I kept the group active and engaged members daily.</span></p></div>
+<div class="stat"><div class="n"><span class="z">批次匯入</span><span class="e">Batch import</span></div><h3><span class="z">雷射刻字流程</span><span class="e">Laser engraving workflow</span></h3><p><span class="z">開發加速出貨的流程，並新增批次匯入雷射刻字作業。</span><span class="e">Developed workflows that speed up fulfillment, including a batch-import flow for laser engraving.</span></p></div>
+</div>
+</div></section>
+
+<section id="case"><div class="w">
+<span class="tag"><span class="z">案例</span><span class="e">Case study</span></span>
+<h2><span class="z">超商未取貨自動提醒系統</span><span class="e">Automated pickup reminders</span></h2>
+<p class="sub"><span class="z">用 n8n 串接物流 API，讓系統每天自己追蹤、自己提醒。</span><span class="e">An n8n workflow that tracks and reminds on its own, every day.</span></p>
+<ol class="flow">
+<li><b><span class="z">每天 17:00</span><span class="e">Daily, 5 PM</span></b><span class="z">n8n 排程觸發</span><span class="e">n8n schedule trigger</span></li>
+<li><b><span class="z">查詢物流 API</span><span class="e">Query logistics API</span></b><span class="z">讀取取貨狀態</span><span class="e">Read pickup status</span></li>
+<li><b><span class="z">篩出未取貨</span><span class="e">Filter unpicked</span></b><span class="z">擷取尚未取件的訂單</span><span class="e">Collect orders not yet collected</span></li>
+<li><b><span class="z">依天數分流</span><span class="e">Route by day</span></b><span class="z">到店第 1–8 天</span><span class="e">Day 1 to 8 at the store</span></li>
+<li><b><span class="z">Email + SMS</span><span class="e">Email + SMS</span></b><span class="z">雙管道提醒顧客</span><span class="e">Dual-channel reminder</span></li>
+</ol>
+<div class="cols">
+<div><h3><span class="z">問題</span><span class="e">Problem</span></h3><p><span class="z">超商取貨的未取貨會造成退貨與後續處理成本，建置前未取貨率為 4.19%（80／1,910）。</span><span class="e">Unpicked convenience-store orders create returns and extra handling. Before the system, the no-pickup rate was 4.19% (80 of 1,910).</span></p></div>
+<div><h3><span class="z">做法</span><span class="e">Approach</span></h3><p><span class="z">與 AI 討論並研究 n8n，串接 PayNow 物流 API。每天定時檢查取貨狀態，把未取貨訂單依到店天數分流，以 Email 與 SMS 提醒。</span><span class="e">Researched n8n with AI and connected the PayNow logistics API. Each day it checks pickup status, groups unpicked orders by days at the store, and sends Email and SMS reminders.</span></p></div>
+<div><h3><span class="z">結果</span><span class="e">Result</span></h3><p><span class="z">未取貨率由 4.19% 降至 3.49%（47／1,345），相對降幅 16.57%。</span><span class="e">The no-pickup rate fell from 4.19% to 3.49% (47 of 1,345), a 16.57% relative reduction.</span></p></div>
+</div>
+</div></section>
+
+<section class="alt" id="experience"><div class="w">
+<h2><span class="z">工作經歷</span><span class="e">Experience</span></h2>
+<p class="sub"><span class="z">點選項目查看內容。</span><span class="e">Select a role to see details.</span></p>
+<div class="rows" id="rows"></div>
+<details><summary><span class="z">更早的經歷</span><span class="e">Earlier experience</span></summary><ul id="early"></ul></details>
+</div></section>
+
+<section id="skills"><div class="w">
+<h2><span class="z">專長</span><span class="e">Skills</span></h2>
+<p class="sub"><span class="z">以 AI 與自動化為核心，結合內容與營運實務。</span><span class="e">Built around AI and automation, grounded in content and operations.</span></p>
+<div class="cols">
+<div><h3><span class="z">AI 與自動化</span><span class="e">AI & automation</span></h3><ul><li>n8n</li><li><span class="z">API 串接</span><span class="e">API integration</span></li><li>Claude · Codex · ChatGPT · Gemini</li><li><span class="z">Prompt 設計</span><span class="e">Prompt design</span></li><li><span class="z">WordPress 多語系建置</span><span class="e">Multilingual WordPress</span></li></ul></div>
+<div><h3><span class="z">內容與行銷</span><span class="e">Content & marketing</span></h3><ul><li><span class="z">社群經營</span><span class="e">Community & social media</span></li><li><span class="z">文案撰寫</span><span class="e">Copywriting</span></li><li>Canva · CapCut</li><li><span class="z">Web3 內容</span><span class="e">Web3 content</span></li></ul></div>
+<div><h3><span class="z">營運與財務</span><span class="e">Operations & finance</span></h3><ul><li><span class="z">訂單、庫存與出貨流程</span><span class="e">Order, inventory and shipping</span></li><li><span class="z">客服流程與 SOP</span><span class="e">Customer service and SOPs</span></li><li><span class="z">應收應付與跨國帳務</span><span class="e">AR/AP and cross-border accounting</span></li><li>Excel</li></ul></div>
+<div><h3><span class="z">學歷</span><span class="e">Education</span></h3><ul><li><span class="z">銘傳大學</span><span class="e">Ming Chuan University</span><small><span class="z">風險管理與保險學系，2020–2024</span><span class="e">Risk Management and Insurance, 2020–2024</span></small></li></ul></div>
+<div><h3><span class="z">證照</span><span class="e">Certifications</span></h3><ul><li><span class="z">Google 數位人才探索計畫：AI 職場通識</span><span class="e">Google AI Essentials for the workplace</span></li><li><span class="z">Google Ads 搜尋廣告認證</span><span class="e">Google Ads Search Certification</span></li><li>TOEIC 645</li></ul></div>
+<div><h3><span class="z">語言</span><span class="e">Languages</span></h3><ul><li><span class="z">中文（母語）</span><span class="e">Mandarin (native)</span></li><li><span class="z">英文（中等）</span><span class="e">English (intermediate)</span></li><li><span class="z">台語（中等）</span><span class="e">Taiwanese Hokkien (intermediate)</span></li></ul></div>
+</div>
+</div></section>
+
+<section class="alt contact" id="contact"><div class="w">
+<h2><span class="z">聯絡我</span><span class="e">Get in touch</span></h2>
+<p><span class="z">目前尋找：AI 營運自動化、電商營運相關職務。台北為主，也接受遠端；錄取後一個月內可到職。</span><span class="e">Looking for roles in AI-driven operations automation and e-commerce operations. Based in Taipei, open to remote; available within a month of an offer.</span></p>
+<div class="links"><a class="btn" data-mail href="#contact" target="_blank" rel="noopener"><span class="z">寄信給我</span><span class="e">Send an email</span></a><button type="button" class="tx" id="copy"><span class="z">複製 Email</span><span class="e">Copy email</span></button></div>
+<p id="msg" aria-live="polite" style="min-height:1.7em;margin:16px auto 0"></p>
+</div></section>
+<footer><div class="w">© 2026 林汶 Meg Lin</div></footer>
+
+<script>
+(function(){
+var H=document.documentElement;
+function b(z,e){return '<span class="z">'+z+'</span><span class="e">'+e+'</span>'}
+/* language */
+var lang=/^zh/i.test(navigator.language||"")?"zh-Hant":"en";
+try{var s=localStorage.getItem("lang");if(s)lang=s}catch(e){}
+function setLang(l){lang=l;H.lang=l;try{localStorage.setItem("lang",l)}catch(e){}}
+setLang(lang);
+document.getElementById("lg").addEventListener("click",function(){setLang(lang==="en"?"zh-Hant":"en")});
+
+/* experience */
+var X=[
+{d:"2026/4 – "+b("現在","Present"),t:b("品牌電商營運專員｜AI 流程優化","Brand E-commerce Operations Specialist · AI Workflow"),c:b("禾少設計有限公司","PARSEC Design"),
+b:[b("用 n8n 串接 PayNow 物流 API，建立超商未取貨自動提醒系統，未取貨率由 4.19% 降至 3.49%（相對降幅 16.6%）。","Built an automated pickup-reminder system with n8n and the PayNow logistics API, cutting the no-pickup rate from 4.19% to 3.49% (a 16.6% relative reduction)."),
+b("開發加速出貨的流程：整合查單、物流建單與批次列印，並新增批次匯入雷射刻字流程。","Developed workflows that speed up fulfillment: order lookup, shipment creation and batch printing, plus batch import for laser engraving."),
+b("以 Codex 協作開發 Chrome 擴充功能，修正標籤機列印版面問題。","Built a Chrome extension with Codex to fix label-printer layout issues."),
+b("統整訂單、庫存與出貨流程，降低漏單與人工錯誤；整理 SOP 與可交接文件。","Streamlined order, inventory and shipping processes to reduce missed orders and manual errors; documented SOPs for handover."),
+b("經營 LINE、Facebook、Email 客服，並負責物流工讀生招募與訓練。","Run customer service on LINE, Facebook and email; recruit and train part-time logistics staff."),
+b("建置 WordPress 官網簡體中文與日文版本。","Built Simplified Chinese and Japanese versions of the WordPress site.")]},
+{d:"2025/12 – 2026/4",t:b("社群文案（遠端兼職）","Social Media Copywriter (remote, part-time)"),c:b("樂利豐股份有限公司","Lifeng Co., Ltd."),
+b:[b("為合作品牌撰寫社群貼文，依品牌調性與活動規劃內容切角。","Wrote social posts for partner brands, shaping angles around brand voice and campaigns."),
+b("蒐集並整理 seeding 合作名單，協助口碑曝光。","Compiled seeding partner lists to support word-of-mouth exposure.")]},
+{d:"2024/8 – 2026/4",t:b("財會暨社群行銷專員","Finance & Social Media Specialist"),c:b("海岳國際股份有限公司","Haiyue International Co., Ltd."),
+b:[b("負責國內外應收應付、國外代理對帳與結帳，追蹤外幣與逾期帳款。","Handled domestic and international AR/AP, agent reconciliation and closing, and tracked foreign-currency and overdue accounts."),
+b("整理業績、帳齡與收付明細報表，提供管理階層即時數據。","Prepared sales, aging and payables/receivables reports for management."),
+b("經營公司 Facebook 與 Instagram，規劃主題、排程、文案與 Canva 圖像。","Ran the company’s Facebook and Instagram: topics, scheduling, copy and Canva visuals.")]},
+{d:"2021/11 – 2023/12",t:"Web3 BD & Marketing Intern",c:b("思偉達創新科技股份有限公司","Siweida Innovation Technology Co., Ltd."),
+b:[b("擔任 Web3 FB 社團管理員，活絡社團氛圍並與成員互動，約一年半由 4,000 人成長至 84,000。","As admin of a Web3 Facebook group, kept the community active and engaged members, growing it from 4,000 to 84,000 in about 1.5 years."),
+b("撰寫區塊鏈主題貼文與公告，並將每日新聞轉化為內容素材。","Wrote blockchain-themed posts and announcements, turning daily news into content."),
+b("以 Canva 製作圖卡，建立基礎 FAQ 文件。","Designed Canva graphics and created a basic FAQ document.")]}
+];
+var rows=document.getElementById("rows");
+X.forEach(function(x,i){
+var r=document.createElement("div");r.className="row"+(i===0?" open":"");var id="pn"+i;
+r.innerHTML='<button type="button" aria-expanded="'+(i===0)+'" aria-controls="'+id+'"><span class="d">'+x.d+'</span><span class="t">'+x.t+'<span class="c">'+x.c+'</span></span><span class="x" aria-hidden="true"></span></button><div class="panel" id="'+id+'"><div><ul>'+x.b.map(function(s){return"<li>"+s+"</li>"}).join("")+'</ul></div></div>';
+var bt=r.querySelector("button");
+bt.addEventListener("click",function(){bt.setAttribute("aria-expanded",r.classList.toggle("open"))});
+rows.appendChild(r);
+});
+var E=[[b("行政助理（實習）","Administrative Assistant (intern)")+" · "+b("中國生產力中心","China Productivity Center"),"2023/10–2024/7"],
+[b("理賠審核實習生","Claims Review Intern")+" · "+b("南山人壽","Nan Shan Life Insurance"),"2023/7–8"],
+[b("銷售人員","Sales Associate")+" · "+b("新光三越 Segway-Ninebot 專櫃","Segway-Ninebot counter, Shin Kong Mitsukoshi"),"2021/8–11"],
+[b("食品銷售人員","Food Sales Associate")+" · "+b("鴨喜露肉品專家","Ya Xi Lu Meat Specialist"),"2020/3–2021/11"]];
+document.getElementById("early").innerHTML=E.map(function(e){return"<li>"+e[0]+"<small>"+e[1]+"</small></li>"}).join("");
+
+/* contact: address assembled at click time, never written in the page */
+function addr(){return ["maggie00215","gmail.com"].join("@")}
+var gm="https://mail.google.com/mail/?view=cm&fs=1&to="+encodeURIComponent(addr());
+[].forEach.call(document.querySelectorAll("[data-mail]"),function(x){x.href=gm});
+document.getElementById("copy").addEventListener("click",function(){
+var m=document.getElementById("msg"),ok=lang==="en"?"Email copied.":"已複製 Email。";
+try{navigator.clipboard.writeText(addr()).then(function(){m.textContent=ok},function(){m.textContent=lang==="en"?"Copy failed. Please use the email button.":"複製失敗，請改用「寄信」按鈕。"})}catch(e){m.textContent=lang==="en"?"Copy failed. Please use the email button.":"複製失敗，請改用「寄信」按鈕。"}
+});
+})();
+</script>
+</body>
+</html>
