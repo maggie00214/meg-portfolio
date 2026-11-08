@@ -59,6 +59,14 @@ h2{font-size:clamp(2rem,5.5vw,3.1rem);line-height:1.12;letter-spacing:-.02em;mar
 .demo picture{display:block}
 .demo img{display:block;width:100%;height:auto;aspect-ratio:820/460;object-fit:cover;background:#171827;border:1px solid var(--line);border-radius:14px}
 @media(max-width:640px){.demo{margin-top:48px;padding-top:36px}.demo figcaption{margin-bottom:18px}.demo img{border-radius:10px}}
+.music{border-top:1px solid var(--line)}
+.music-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,456px);gap:64px;align-items:center}
+.music-copy h2{margin-bottom:16px}
+.music-copy p{color:var(--mute);margin:0 0 24px;max-width:34em}
+.music-copy a{display:inline-flex;align-items:center;gap:8px;font-weight:500}
+.music-copy a::after{content:"↗";font-size:.9em}
+.spotify{width:100%;height:152px;border:0;border-radius:12px;background:#181818}
+@media(max-width:760px){.music-grid{grid-template-columns:1fr;gap:34px}.spotify{min-width:0}}
 .tag{display:inline-block;font-size:.85rem;color:var(--mute);margin-bottom:8px}
 .rows{border-top:1px solid var(--line)}.row{border-bottom:1px solid var(--line)}
 .row>button{all:unset;box-sizing:border-box;cursor:pointer;display:grid;grid-template-columns:150px 1fr 24px;gap:16px;align-items:center;width:100%;padding:22px 0}
@@ -129,6 +137,11 @@ footer{padding:26px 0 40px;text-align:center;color:var(--mute);font-size:.82rem;
 <figcaption><h3><span class="z">批次列印流程</span><span class="e">Batch label printing</span></h3><p><span class="z">將多筆超商標籤集中整理後，一次進入列印確認，減少逐筆處理。</span><span class="e">Multiple store labels are prepared together and sent to one print confirmation, reducing one-by-one handling.</span></p></figcaption>
 <picture><source media="(prefers-reduced-motion:reduce)" srcset="label_demo2-poster.png"><img src="label_demo2.gif" width="820" height="460" loading="lazy" decoding="async" alt="批次列印流程示範 / Batch label printing workflow demo"></picture>
 </figure>
+</div></section>
+
+<section class="music" id="music"><div class="w music-grid">
+<div class="music-copy"><span class="tag"><span class="z">AI 音樂創作</span><span class="e">AI music</span></span><h2>Still Watching</h2><p><span class="z">以 AI 協作完成歌曲概念與製作，並以 Zer0wen 名義發行於 Spotify。</span><span class="e">An AI-assisted music project released on Spotify under the artist name Zer0wen.</span></p><a href="https://open.spotify.com/artist/7usMUTUDPL0C9MyQwrVGLF" target="_blank" rel="noopener"><span class="z">查看 Zer0wen 藝人頁</span><span class="e">View Zer0wen on Spotify</span></a></div>
+<iframe class="spotify" title="Spotify 播放器：Still Watching / Spotify player: Still Watching" src="https://open.spotify.com/embed/track/2eqDxkST5fqtxSijHbnqUw?utm_source=generator&theme=0" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen></iframe>
 </div></section>
 
 <section class="alt" id="experience"><div class="w">
